@@ -18,7 +18,7 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-  <title>pycharm小白遇坑 - flyfeather</title>
+  <title>python和tensorflow语法 - flyfeather</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="pycharm小白遇坑">
+            <span class="h2" id="subtitle" title="python和tensorflow语法">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-06-07 21:41" pubdate>
-        2021年6月7日 晚上
+      <time datetime="2021-06-09 22:31" pubdate>
+        2021年6月9日 晚上
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      628 字
+      573 字
     </span>
   
 
@@ -225,54 +225,32 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">pycharm小白遇坑</h1>
+            <h1 style="display: none">python和tensorflow语法</h1>
             
             <div class="markdown-body">
-              <h2 id="1-pycharm命令行下载数据集出现-No-module-named-requests"><a href="#1-pycharm命令行下载数据集出现-No-module-named-requests" class="headerlink" title="1.pycharm命令行下载数据集出现 No module named requests"></a>1.pycharm命令行下载数据集出现 No module named requests</h2><p><img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/1.png" srcset="/img/loading.gif" lazyload alt="1"></p>
-<p>没有那就下呗，先按照往常直接在pycharm的setting中下载：</p>
-<p><img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/2.png" srcset="/img/loading.gif" lazyload alt="2"></p>
-<p>再次运行pycharm命令行，没解决。</p>
-<p>遂打开cmd，进入python36虚拟环境，pip下载：</p>
-<p><img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/3.png" srcset="/img/loading.gif" lazyload alt="3"></p>
-<p>显示下载成功。现在情况是pycharm的project中有requests包，通过cmd也下载了下来，但是pycharm无法使用。</p>
-<p>发现一个问题，在pycharm的terminal中运行download.py，它使用的包是gan36项目的venv里面的，不是anaconda虚拟幻境里的。</p>
-<p><strong>解决：</strong></p>
-<p>我之前每次运程序的时候都是在pycharm的terminal中直接打的命令，这是一种运行方式，还有一种是直接在菜单栏中点”run”：</p>
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/4.png" srcset="/img/loading.gif" lazyload alt="4" style="zoom: 67%;">
-
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/5.png" srcset="/img/loading.gif" lazyload alt="5" style="zoom:67%;">
-
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/6.png" srcset="/img/loading.gif" lazyload alt="6" style="zoom: 50%;">
-
-<p>在这两处可以修改运行的.py程序名和需要输入的参数。按照命令的要求输入后程序可以运行了！</p>
-<p>所以并不是我的requests包安装的环境或是位置有问题，配置是正确的。</p>
-<p>在之后又发现了requests.Session找不到的问题，是怀疑是requests下载的版本不合适，换成了2.22.0版本。然后又出现了有关HttpConnection的错误，从google登陆网站时被墙了，所以干脆自己在网上找网盘或国内提供数据集的网站下载数据集。</p>
-<h2 id="2-下载好django包无法在命令行中使用："><a href="#2-下载好django包无法在命令行中使用：" class="headerlink" title="2.下载好django包无法在命令行中使用："></a>2.下载好django包无法在命令行中使用：</h2><img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/7.png" srcset="/img/loading.gif" lazyload alt="7" style="zoom: 67%;">
-
-<p><strong>解决：</strong></p>
-<p>激活虚拟环境，再在想要创建web项目的路径下输入“django-admin startproject showPage”，如下：</p>
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/8.png" srcset="/img/loading.gif" lazyload alt="8" style="zoom:67%;">
-
-
-
-<p>【django命令】</p>
-<p>启动项目：python manage.py runserver 8000</p>
-<p>为了实现用户的登录和注册功能，在showPage项目中新建一个app，app理解为一个子模块，为实现功能的模块化，“将一些相对外部独立，但内部关系紧密的组件，组合在一个app中”。</p>
-<h2 id="3-pycharm社区版没有直接连接数据库的拓展"><a href="#3-pycharm社区版没有直接连接数据库的拓展" class="headerlink" title="3.pycharm社区版没有直接连接数据库的拓展"></a>3.pycharm社区版没有直接连接数据库的拓展</h2><p> 需要通过第三方库或者插件进行链接，这次选择安装DataBase Navigater插件</p>
-<p>【页面渲染】：从一个网页的Url开始,根据Url所对应的网页各项资源,输出可视化的结果的过程</p>
-<h2 id="4-一些小问题"><a href="#4-一些小问题" class="headerlink" title="4.一些小问题"></a>4.一些小问题</h2><p>（1）一般出现这个错误是运行程序的参数设置问题，解决：在菜单栏的run执行</p>
-<p><img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/9.png" srcset="/img/loading.gif" lazyload alt="9"></p>
-<p>（2）我的Django是2.0版本之后，这里要加一个app名的参数，不然汇会报“django.core.exceptions.ImproperlyConfigured”错误</p>
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/10.png" srcset="/img/loading.gif" lazyload style="zoom:67%;">
-
-<p>（3）改时区</p>
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/11.png" srcset="/img/loading.gif" lazyload alt="11" style="zoom:67%;">
-
-<p>这样的话”Connection“右下角就不会出现红色感叹号显示时区问题了</p>
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/12.png" srcset="/img/loading.gif" lazyload alt="12" style="zoom:67%;">
-
-
-
+              <h2 id="python语法："><a href="#python语法：" class="headerlink" title="python语法："></a>python语法：</h2><p>1、python中的self：表示当前类的对象，可以调用当前类中的属性和方法。</p>
+<p>  给实例变量绑定属性，用def  init  __(self)方法，______init ____方法的第一个参数永远是 self ，表示创建的实例本身。在类中定义的函数第一个参数永远是self</p>
+<p>2、python中类的实例化，创建实例化是通过 类名+() 实现的</p>
+<p>3、私有变量是在名称前以两个下划线开头，只有内部可以访问，一定要外部访问时，调用格式为_类名__变量名</p>
+<p>4、python中的注释：单行用#，多行用三个单引号或三个双引号括起来</p>
+<p>5、class后跟类名，类名后跟(object)，表示该类是从哪个类继承下来的，通常，如果没有合适的继承类，就使用object 类，这是所有类最终都会 继承的类</p>
+<p>6、from A import a1 是从A模块导入a1工具（可以是某个 函数，全局变量，类）；</p>
+<p>   import A是导入整个A模块的全部内容（包括全部的函数，全局变量，类）。</p>
+<h2 id="tensorflow函数"><a href="#tensorflow函数" class="headerlink" title="tensorflow函数"></a>tensorflow函数</h2><p>tf.placeholder :占位函数，声明时没有将输入的数据传入模型，在session建立之后，运行模型时才会将数据喂入占位符</p>
+<p>tf.reshape(tensor,shape,name=None): 将tensor变换为shape形式</p>
+<p>tf.reduce_mean：计算张量tensor沿着某一维度上的平均值</p>
+<p>tf.summary.histogram：用于查看一个张量在训练过程中值的分布情况，其分布情况以直方图的形式在TensorBoard直方图仪表板上显示．</p>
+<p>tf.ones_like：创建一个和输入参数维度一样，元素都为1的张量</p>
+<p>tf.nn.sigmoid_cross_entropy_with_logits：对于给定的logits计算sigmoid的交叉熵（？），衡量的是分类任务中的概率误差</p>
+<p>tf.summary.scalar：显示标量的信息 </p>
+<p>tf.contrib.layers.flatten：卷积神经网络全连接层前的预处理</p>
+<p>tf.multiply：两个相乘的数元素各自相乘 （不是矩阵乘法）</p>
+<p>tf.gradients：求导</p>
+<p>np.random.shuffle：重新排序返回一个随机序列</p>
+<p>tf.variable_scope：用于定义创建变量(层)的操作的上下文管理器（？）</p>
+<p>tf.contrib.layers.batch_norm：加速神经网络训练</p>
+<p>tf.concat：拼接张量</p>
+<p>tf.nn.conv2d：实现卷积操作</p>
 
             </div>
             <hr>
@@ -283,7 +261,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/pycharm/">pycharm</a>
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
                     
                   </div>
                 
@@ -300,15 +278,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/06/09/word%E6%8E%92%E7%89%88%E5%B0%8F%E6%8A%80%E5%B7%A7/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">word排版小技巧</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/06/09/Models%E3%80%91%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%AD%E4%B9%89%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D/">
+                        <span class="hidden-mobile">Models】基于深度生成模型的语义图像修复</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

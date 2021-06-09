@@ -18,7 +18,7 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-  <title>pycharm小白遇坑 - flyfeather</title>
+  <title>word排版小技巧 - flyfeather</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="pycharm小白遇坑">
+            <span class="h2" id="subtitle" title="word排版小技巧">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-06-07 21:41" pubdate>
-        2021年6月7日 晚上
+      <time datetime="2021-06-09 21:53" pubdate>
+        2021年6月9日 晚上
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      628 字
+      57 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      1
        分钟
     </span>
   
@@ -225,54 +225,16 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">pycharm小白遇坑</h1>
+            <h1 style="display: none">word排版小技巧</h1>
             
             <div class="markdown-body">
-              <h2 id="1-pycharm命令行下载数据集出现-No-module-named-requests"><a href="#1-pycharm命令行下载数据集出现-No-module-named-requests" class="headerlink" title="1.pycharm命令行下载数据集出现 No module named requests"></a>1.pycharm命令行下载数据集出现 No module named requests</h2><p><img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/1.png" srcset="/img/loading.gif" lazyload alt="1"></p>
-<p>没有那就下呗，先按照往常直接在pycharm的setting中下载：</p>
-<p><img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/2.png" srcset="/img/loading.gif" lazyload alt="2"></p>
-<p>再次运行pycharm命令行，没解决。</p>
-<p>遂打开cmd，进入python36虚拟环境，pip下载：</p>
-<p><img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/3.png" srcset="/img/loading.gif" lazyload alt="3"></p>
-<p>显示下载成功。现在情况是pycharm的project中有requests包，通过cmd也下载了下来，但是pycharm无法使用。</p>
-<p>发现一个问题，在pycharm的terminal中运行download.py，它使用的包是gan36项目的venv里面的，不是anaconda虚拟幻境里的。</p>
-<p><strong>解决：</strong></p>
-<p>我之前每次运程序的时候都是在pycharm的terminal中直接打的命令，这是一种运行方式，还有一种是直接在菜单栏中点”run”：</p>
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/4.png" srcset="/img/loading.gif" lazyload alt="4" style="zoom: 67%;">
+              <h1 id="word排版小技巧"><a href="#word排版小技巧" class="headerlink" title="word排版小技巧"></a>word排版小技巧</h1><ul>
+<li><p>设定好正文和各种标题的样式模板后，封面出现如下情况？</p>
+<img src="/2021/06/09/word%E6%8E%92%E7%89%88%E5%B0%8F%E6%8A%80%E5%B7%A7/1.png" srcset="/img/loading.gif" lazyload alt="实例-论文封面" style="zoom:50%;">
 
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/5.png" srcset="/img/loading.gif" lazyload alt="5" style="zoom:67%;">
-
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/6.png" srcset="/img/loading.gif" lazyload alt="6" style="zoom: 50%;">
-
-<p>在这两处可以修改运行的.py程序名和需要输入的参数。按照命令的要求输入后程序可以运行了！</p>
-<p>所以并不是我的requests包安装的环境或是位置有问题，配置是正确的。</p>
-<p>在之后又发现了requests.Session找不到的问题，是怀疑是requests下载的版本不合适，换成了2.22.0版本。然后又出现了有关HttpConnection的错误，从google登陆网站时被墙了，所以干脆自己在网上找网盘或国内提供数据集的网站下载数据集。</p>
-<h2 id="2-下载好django包无法在命令行中使用："><a href="#2-下载好django包无法在命令行中使用：" class="headerlink" title="2.下载好django包无法在命令行中使用："></a>2.下载好django包无法在命令行中使用：</h2><img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/7.png" srcset="/img/loading.gif" lazyload alt="7" style="zoom: 67%;">
-
-<p><strong>解决：</strong></p>
-<p>激活虚拟环境，再在想要创建web项目的路径下输入“django-admin startproject showPage”，如下：</p>
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/8.png" srcset="/img/loading.gif" lazyload alt="8" style="zoom:67%;">
-
-
-
-<p>【django命令】</p>
-<p>启动项目：python manage.py runserver 8000</p>
-<p>为了实现用户的登录和注册功能，在showPage项目中新建一个app，app理解为一个子模块，为实现功能的模块化，“将一些相对外部独立，但内部关系紧密的组件，组合在一个app中”。</p>
-<h2 id="3-pycharm社区版没有直接连接数据库的拓展"><a href="#3-pycharm社区版没有直接连接数据库的拓展" class="headerlink" title="3.pycharm社区版没有直接连接数据库的拓展"></a>3.pycharm社区版没有直接连接数据库的拓展</h2><p> 需要通过第三方库或者插件进行链接，这次选择安装DataBase Navigater插件</p>
-<p>【页面渲染】：从一个网页的Url开始,根据Url所对应的网页各项资源,输出可视化的结果的过程</p>
-<h2 id="4-一些小问题"><a href="#4-一些小问题" class="headerlink" title="4.一些小问题"></a>4.一些小问题</h2><p>（1）一般出现这个错误是运行程序的参数设置问题，解决：在菜单栏的run执行</p>
-<p><img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/9.png" srcset="/img/loading.gif" lazyload alt="9"></p>
-<p>（2）我的Django是2.0版本之后，这里要加一个app名的参数，不然汇会报“django.core.exceptions.ImproperlyConfigured”错误</p>
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/10.png" srcset="/img/loading.gif" lazyload style="zoom:67%;">
-
-<p>（3）改时区</p>
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/11.png" srcset="/img/loading.gif" lazyload alt="11" style="zoom:67%;">
-
-<p>这样的话”Connection“右下角就不会出现红色感叹号显示时区问题了</p>
-<img src="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/12.png" srcset="/img/loading.gif" lazyload alt="12" style="zoom:67%;">
-
-
-
+<p>方法：将每行的行距设置成“单倍行距”，插入图片出现此类问题同理</p>
+</li>
+</ul>
 
             </div>
             <hr>
@@ -283,7 +245,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/pycharm/">pycharm</a>
+                      <a class="hover-with-bg" href="/tags/word/">word</a>
                     
                   </div>
                 
@@ -300,15 +262,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/06/09/word%E6%8E%92%E7%89%88%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+                      <a href="/2021/06/09/%E6%AF%95%E8%AE%BE-GAN%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E8%BF%90%E8%A1%8C%E6%88%90%E6%9E%9C/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">word排版小技巧</span>
+                        <span class="hidden-mobile">毕设-GAN代码笔记以及运行成果</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/06/07/pycharm%E5%B0%8F%E7%99%BD%E9%81%87%E5%9D%91/">
+                        <span class="hidden-mobile">pycharm小白遇坑</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
